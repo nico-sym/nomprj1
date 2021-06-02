@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\UserRepository;
+
+class AccueilController extends AbstractController
+{
+    /**
+     * @Route("/", name="accueil")
+     */
+
+     /*
+    public function index(): Response
+    {
+        return $this->render('accueil/index.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+    */
+
+    public function index(UserRepository $userRepository): Response
+    {
+        return $this->render('accueil/index.html.twig', [
+            'users' => $userRepository->findAll(),
+        ]);
+    }
+}
