@@ -20,20 +20,26 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $roles[] = 'ROLE_USER';
-
-        //Utilisation de faker
-		//$faker = Factory::create('fr_FR');
         
-		// Création d'un utilisateur
-		$user= new User();
-		
-		$user->setEmail('user@test.com')
-             ->setRoles($roles);
-        		
-		$password = $this->encoder->encodePassword($user, 'password');
-		$user->setPassword($password);
-		
-		$manager->persist($user);
-        $manager->flush();
+        //Utilisation de faker
+		$faker = Factory::create('fr_FR');
+        
+        for ($i = 0; $i < 3; $i++) {
+            // Création d'un utilisateur
+            $user= new User();
+            
+            $user->setEmail('user'.$i.'@test.com')
+                ->setName('user'.$i)
+                ->setSlug('user'.$i.'slug')
+                ->setCreatedAt($faker->dateTime('now'))
+                ->setRoles($roles);
+
+                    
+            $password = $this->encoder->encodePassword($user, 'password');
+            $user->setPassword($password);
+            
+            $manager->persist($user);
+            $manager->flush();
+        }
     }
 }
