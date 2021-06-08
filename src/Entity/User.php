@@ -166,7 +166,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->gru->contains($gru)) {
             $this->gru[] = $gru;
-            $gru->setUsr($this);
+            $gru->setUser($this);
         }
 
         return $this;
@@ -176,8 +176,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->gru->removeElement($gru)) {
             // set the owning side to null (unless already changed)
-            if ($gru->getUsr() === $this) {
-                $gru->setUsr(null);
+            if ($gru->getUser() === $this) {
+                $gru->setUser(null);
             }
         }
 

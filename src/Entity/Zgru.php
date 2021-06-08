@@ -34,12 +34,12 @@ class Zgru
         return $this->id;
     }
 
-    public function getUsr(): ?User
+    public function getUser(): ?User
     {
         return $this->usr;
     }
 
-    public function setUsr(?User $usr): self
+    public function setUser(?User $usr): self
     {
         $this->usr = $usr;
 

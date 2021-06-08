@@ -21,7 +21,7 @@ class AccueilController extends AbstractController
         ]);
     }
     */
-
+    
     public function index(UserRepository $userRepository): Response
     {
         return $this->render('accueil/index.html.twig', [
