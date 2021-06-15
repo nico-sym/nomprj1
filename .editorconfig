@@ -1,4 +1,5 @@
 [*.php]
 	php_diagnostic_php0405 = false
 	php_diagnostic_php0412 = false
+	php_diagnostic_php0413 = false
 	php_diagnostic_php0418 = false

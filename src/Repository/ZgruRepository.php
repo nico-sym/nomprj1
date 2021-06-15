@@ -47,4 +47,20 @@ class ZgruRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    /*
+    public function findOneByIdJoinedToUser(int $gruId): ?Zgru
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p, c
+            FROM App\Entity\Zgru p
+            INNER JOIN p.User c
+            WHERE p.id = :id'
+        )->setParameter('id', $gruId);
+
+        return $query->getOneOrNullResult();
+    }
+    */
 }

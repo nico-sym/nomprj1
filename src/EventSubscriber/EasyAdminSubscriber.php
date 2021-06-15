@@ -92,8 +92,8 @@ class EasyAdminSubscriber implements EventSubscriberInterface
             return;
         }
         
-        //$gru = $this->security->getGru();
-        //$entity->setGru($gru);
+        $gru = $this->security->getGru();
+        $entity->setGru($gru);
     }
 
     //Zper-Zact----------------------------------------------------------
