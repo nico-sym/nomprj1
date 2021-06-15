@@ -122,7 +122,7 @@ class Zite
     /**
      * @return Collection|Zper[]
      */
-    public function getPer(): Collection
+    public function getZper(): Collection
     {
         return $this->per;
     }

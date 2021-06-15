@@ -20,6 +20,7 @@
     "dependencies": {
         "autoprefixer": "^10.2.6",
         "bootstrap": "^5.0.1",
+        "jshint": "^2.13.0",
         "postcss-loader": "^5.3.0",
         "uuid": "^8.3.2"
     }

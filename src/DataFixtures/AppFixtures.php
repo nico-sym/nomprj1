@@ -25,7 +25,7 @@ class AppFixtures extends Fixture
 		$faker = Factory::create('fr_FR');
         
         for ($i = 0; $i < 3; $i++) {
-            // Création d'un utilisateur
+            // Création utilisateur
             $user= new User();
             
             $user->setEmail('user'.$i.'@test.com')
@@ -33,8 +33,7 @@ class AppFixtures extends Fixture
                 ->setSlug('user'.$i.'slug')
                 ->setCreatedAt($faker->dateTime('now'))
                 ->setRoles($roles);
-
-                    
+    
             $password = $this->encoder->encodePassword($user, 'password');
             $user->setPassword($password);
             
