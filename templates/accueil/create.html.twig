@@ -1,0 +1,35 @@
+{% extends '/base.html.twig' %}
+
+{% block body %}
+
+	{% if editMod   %}
+		<h2>Modification article</h2>
+	{% else %}
+		<h2>Création article</h2>
+	{% endif %}
+
+	{{ form_start(formArticle) }}
+
+	{# ce form_widget affiche tous les champs {{ form_widget(formArticle) }} #}
+
+	{{ form_row(formArticle.title, {
+		'attr': {'placeholder' : "Titre de l'article", 'class' : 'form-control'}}) }}
+
+	{{ form_row(formArticle.content, {
+		'attr': {'placeholder' : "Contenu", 'class' : 'form-control'}}) }}
+
+	{{ form_row(formArticle.image, {
+		'attr': {'placeholder' : "Image de l'article", 'class' : 'form-control'}}) }}
+
+	<button type="submit" class="btn btn-success">
+		{% if editMod   %}
+			Modifier l'article
+		{% else %}
+			Ajouter l'article
+		{% endif %}
+
+	</button>
+
+	{{ form_end(formArticle) }}
+
+{% endblock %}
